@@ -1,0 +1,24 @@
+{
+  "name": "Blind Assistant",
+  "short_name": "Blind Assistant",
+  "description": "An ML based application to assist blind people through object & distance detection and voice assistant.",
+  "theme_color": "black",
+  "background_color": "black",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "id":"/",
+  "icons": [
+    {
+      "src": "images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

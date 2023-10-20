@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Responsive -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+      content="An ML based application to assist blind people through object & distance detection and voice assistant.">
+    <meta property="og:title" content="Blind Assistant">
+    <meta property="og:type" content="Application">
+    <meta property="og:description"
+    content="An ML based application to assist blind people through object & distance detection and voice assistant.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+</head>
+
+<body>
+    <section class="section">
+      <div class="container is-fluid">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <img width="20%" height="20%" src="{{ url_for('static', filename='images/icon-192x192.png') }}"><p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">blind assistant</p>
+            </div>
+        </nav>
+        <hr>
+        {% block content %} 
+
+        {% endblock %}
+      </div>
+    </section>
+    <script>     
+        if ('serviceWorker' in navigator) {
+              window.addEventListener('load', function() {
+                navigator.serviceWorker.register("/sw.js", { scope: '/' })
+                .then(function(registration) {
+                  // Registration was successful
+                  console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                  // registration failed :(
+                  console.log('ServiceWorker registration failed: ', err);
+                });
+              });
+            } 
+     </script>
+</body>
+
+</html>
